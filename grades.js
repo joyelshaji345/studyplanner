@@ -164,12 +164,4 @@ document.getElementById("resetBtn").addEventListener("click", () => {
     renderGrades();
   }
 });
-
-document.getElementById("restoreDefaultsBtn").addEventListener("click", () => {
-  if (confirm("Restore default subjects? This will replace your current list.")) {
-    gradesData = defaultGrades.map(e => ({ ...e }));
-    saveGrades(gradesData);
-    renderGrades();
-  }
-});
 renderGrades();
