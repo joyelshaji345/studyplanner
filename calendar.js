@@ -5,12 +5,10 @@ const nextBtn = document.getElementById("next");
 
 let currentDate = new Date();
 
-// Unique key for each month
 function getMonthKey(date) {
   return `${date.getFullYear()}-${date.getMonth()}`;
 }
 
-// Extended default events for multiple months
 function getDefaultEvents() {
   return {
     "2025-5": {
@@ -25,12 +23,10 @@ function getDefaultEvents() {
   };
 }
 
-// Load events from localStorage
 function loadEvents() {
   return JSON.parse(localStorage.getItem("calendarEvents") || "{}");
 }
 
-// Save events to localStorage
 function saveEvents(events) {
   localStorage.setItem("calendarEvents", JSON.stringify(events));
 }
