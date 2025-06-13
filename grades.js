@@ -62,8 +62,6 @@ function renderGrades() {
 
     const actions = document.createElement("div");
     actions.className = "grade-actions";
-
-    // Edit Subject Button
     const editSubjectBtn = document.createElement("button");
     editSubjectBtn.className = "edit-subject-btn";
     editSubjectBtn.textContent = "Edit Subject";
