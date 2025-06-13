@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calendar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="calendar.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <a href="index.html" class="nav-btn">Home</a>
+      <a href="grades.html" class="nav-btn">Grades</a>
+      <a href="todo.html" class="nav-btn">To-Do</a>
+      <a href="calendar.html" class="nav-btn active">Calendar</a>
+      <a href="timer.html" class="nav-btn">Timer</a>
+      <a href="account.html" class="nav-btn">Account</a>
+      <a href="settings.html" class="nav-btn">Settings</a>
+    </aside>
+
+    <main class="main">
+      <div class="sidebar-toggle" title="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="calendar-header">
+        <button id="prev">Last</button>
+        <h2 id="month-year"></h2>
+        <button id="next">Next</button>
+      </div>
+      <div class="calendar-grid" id="calendar-grid"></div>
+      <h3>Events listed</h3>
+      <ul id="event-list"></ul>
+    </main>
+  </div>
+
+  <script src="app.js" defer></script>
+  <script src="calendar.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+/* --- Styles specific to timer.html --- */
+
+.main {
+  text-align: center;
+}
+
+.timer-circle {
+  width: 200px;
+  height: 200px;
+  background-color: #4ecbff;
+  border-radius: 50%;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#time {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.timer-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: 'Fredoka One', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.start { background-color: #ff7c7c; }
+.pause { background-color: #00ff68; }
+.reset { background-color: #42ffe6; }
+/* Add these new rules to timer.css */
+
+.timer-modes {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.mode-btn {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 2px solid transparent;
+}
+
+.mode-btn.active {
+  border-color: #4ecbff; /* Highlight the active mode */
+  background-color: #e0f7ff;
+}

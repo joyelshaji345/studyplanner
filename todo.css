@@ -1,0 +1,182 @@
+/* todo.css (Updated for new features, keeping original theme) */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main > h1 { width: 100%; text-align: center; }
+
+.todo-container {
+  margin-top: 30px;
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.add-task-form {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+#taskInput {
+  flex-grow: 1;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+#addTaskBtn {
+  padding: 12px 25px;
+  font-size: 1rem;
+  border: none;
+  background-color: #4ecbff;
+  color: black;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Fredoka One', sans-serif;
+  transition: all 0.2s ease;
+}
+#addTaskBtn:hover { transform: translateY(-2px); }
+
+/* Master task list container */
+#master-task-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Individual task item styling */
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  flex-wrap: wrap; 
+  border-left: 4px solid transparent;
+}
+
+/* Main part of the task (checkbox and text) */
+.task-item .task-main {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.task-item .task-checkbox {
+  width: 18px;
+  height: 18px;
+}
+.task-item .task-text {
+  font-size: 1.1rem;
+}
+
+/* Deadline display and input */
+.task-item .task-details {
+  font-size: 0.9em;
+  color: #555;
+  margin-left: 28px; 
+  flex-basis: 100%;
+  padding-top: 5px;
+}
+.task-item .deadline-input {
+    margin-left: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+/* Action buttons (star, delete) */
+.task-item .task-actions {
+  margin-left: auto; 
+  display: flex;
+  gap: 10px;
+}
+.task-item .task-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  transition: transform 0.2s ease;
+}
+.task-item .task-actions button:hover {
+  transform: scale(1.2);
+}
+.task-item .today-btn {
+  color: #ccc; 
+}
+.task-item .delete-btn {
+  color: #ff7c7c;
+}
+
+/* Special states for tasks */
+.task-item.is-today {
+  border-left-color: #ffd000;
+}
+.task-item.is-today .today-btn {
+  color: #ffd000; 
+}
+.task-item.is-done .task-text {
+  text-decoration: line-through;
+  color: #aaa;
+}
+.task-item.is-done {
+    background-color: #f7f7f7;
+}
+
+.task-empty {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-style: italic;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+#clearCompletedBtn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #ffd000;
+  color: black;
+  font-family: 'Fredoka One', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+#clearCompletedBtn:hover { transform: translateY(-2px); }
+
+
+/* --- Dark Mode Overrides for To-Do Page --- */
+body.dark .task-item,
+body.dark .task-empty {
+  background-color: #2a2a2a;
+  color: white;
+  border-color: transparent;
+}
+body.dark .task-item.is-done {
+    background-color: #222;
+}
+body.dark .task-item.is-done .task-text {
+    color: #666;
+}
+body.dark .task-item.is-today {
+  border-left-color: #ffd000;
+}
+body.dark .task-item .task-details {
+    color: #999;
+}
+body.dark .task-item .deadline-input {
+    background-color: #444;
+    border-color: #555;
+    color: white;
+}

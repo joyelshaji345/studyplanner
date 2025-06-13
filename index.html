@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Academic Planner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <a href="index.html" class="nav-btn active">Home</a>
+      <a href="grades.html" class="nav-btn">Grades</a>
+      <a href="todo.html" class="nav-btn">To-Do</a>
+      <a href="calendar.html" class="nav-btn">Calendar</a>
+      <a href="timer.html" class="nav-btn">Timer</a>
+      <a href="account.html" class="nav-btn">Account</a>
+      <a href="settings.html" class="nav-btn">Settings</a>
+    </aside>
+
+    <main class="main">
+      <div class="sidebar-toggle" title="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="header">
+        <h1 class="title">Get, Set, GOOO!!!</h1>
+        <p class="welcome">Welcome Back, Joyel</p>
+        <div class="quote-bar-section">
+          <div class="quote-bar" id="quote">Motivational Quote</div>
+          <button class="refresh-quote-btn" onclick="showRandomQuote()">New Quote</button>
+        </div>
+        <img src="Joyel.jpg" alt="Profile" class="profile-pic" />
+        <div id="sidebar-tip" class="sidebar-tip">Use the sidebar to navigate to other pages</div>
+      </div>
+
+      <div class="task-section">
+        <h2 class="task-title">What to do today?</h2>
+        <ul class="task-list" id="home-task-list"></ul>
+      </div>
+
+      <div class="timer-section">
+        <h2 class="timer-title">Timer</h2>
+        <div class="timer-circle">
+          <span id="home-time">25:00</span>
+        </div>
+        <div class="timer-buttons">
+          <button class="btn pause" id="pause">Pause</button>
+          <button class="btn start" id="start">Start</button>
+          <button class="btn reset" id="reset">Reset</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js" defer></script>
+  <script src="tasks.js" defer></script>
+  <script src="timer.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderHomeTasks();
+    });
+  </script>
+  <script>
+    const quotes = [
+      "Push yourself, because no one else is going to do it for you.",
+      "Don’t stop when you’re tired. Stop when you’re done.",
+      "Hard work beats talent when talent doesn’t work hard.",
+      "Great things never come from comfort zones.",
+      "It always seems impossible until it’s done.",
+      "Discipline is choosing between what you want now and what you want most."
+    ];
+    const quoteEl = document.getElementById("quote");
+    function showRandomQuote() {
+      const index = Math.floor(Math.random() * quotes.length);
+      quoteEl.textContent = quotes[index];
+    }
+    showRandomQuote();
+    setInterval(showRandomQuote, 60000);
+  </script>
+</body>
+</html>

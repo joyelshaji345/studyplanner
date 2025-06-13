@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grades</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="grades.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <a href="index.html" class="nav-btn">Home</a>
+      <a href="grades.html" class="nav-btn active">Grades</a>
+      <a href="todo.html" class="nav-btn">To-Do</a>
+      <a href="calendar.html" class="nav-btn">Calendar</a>
+      <a href="timer.html" class="nav-btn">Timer</a>
+      <a href="account.html" class="nav-btn">Account</a>
+      <a href="settings.html" class="nav-btn">Settings</a>
+    </aside>
+
+    <main class="main">
+      <div class="sidebar-toggle" title="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <h1>Subjects & Grades</h1>
+      <div class="grades-form">
+        <input type="text" id="newSubject" placeholder="Subject" />
+        <input type="text" id="newGrade" placeholder="Grade" />
+        <button id="addBtn">Add New Subject</button>
+        <button id="resetBtn">Clear all</button>
+        <button id="restoreDefaultsBtn">Restore Default</button>
+      </div>
+      <h2 id="cgpa-display">CGPA: 0.00</h2>
+      <div id="grades-container" class="grades-grid">
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js" defer></script>
+  <script src="grades.js"></script>
+</body>
+</html>

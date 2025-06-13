@@ -1,0 +1,53 @@
+/* --- Styles specific to settings.html --- */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 60px; /* Override default padding */
+}
+
+.setting-option {
+  background-color: rgba(255, 62, 62, 0.7);
+  padding: 25px 30px;
+  border-radius: 15px;
+  width: 450px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  font-size: 18px;
+  text-align: center;
+  color: #000;
+}
+
+.setting-option button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #00d755;
+  color: black;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.setting-option button:hover {
+  background-color: #00b34a;
+}
+
+#quoteOutput {
+  margin-top: 15px;
+  font-style: normal;
+  color: #333;
+}
+
+/* --- Dark Mode Specifics for settings.html --- */
+body.dark .setting-option {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: white;
+  box-shadow: none;
+}
+
+body.dark #quoteOutput {
+  color: #ccc;
+}

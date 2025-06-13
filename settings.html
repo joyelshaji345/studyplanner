@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Settings</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="settings.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <a href="index.html" class="nav-btn">Home</a>
+      <a href="grades.html" class="nav-btn">Grades</a>
+      <a href="todo.html" class="nav-btn">To-Do</a>
+      <a href="calendar.html" class="nav-btn">Calendar</a>
+      <a href="timer.html" class="nav-btn">Timer</a>
+      <a href="account.html" class="nav-btn">Account</a>
+      <a href="settings.html" class="nav-btn active">Settings</a>
+    </aside>
+
+    <main class="main">
+      <div class="sidebar-toggle" title="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <h1>Settings</h1>
+      <div class="setting-option">
+        <label>
+          <input type="checkbox" id="darkToggle" />
+          Enable Dark Mode
+        </label>
+      </div>
+      <div class="setting-option">
+        <button id="refreshQuoteBtn">Get New Motivational Quote</button>
+        <p id="quoteOutput">Your new quote will appear here.</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js" defer></script>
+  <script>
+    // Page-specific script for settings
+    const quoteList = [
+      "Push yourself, because no one else will.",
+      "Don’t stop when you’re tired. Stop when you’re done.",
+      "Hard work beats talent when talent doesn’t work hard.",
+      "Success is the sum of small efforts, repeated day in and day out.",
+      "Great things never come from comfort zones."
+    ];
+    const refreshBtn = document.getElementById('refreshQuoteBtn');
+    const quoteOutput = document.getElementById('quoteOutput');
+    
+    function refreshQuote() {
+      const quote = quoteList[Math.floor(Math.random() * quoteList.length)];
+      quoteOutput.textContent = quote;
+    }
+    
+    refreshBtn.addEventListener('click', refreshQuote);
+  </script>
+</body>
+</html>

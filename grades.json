@@ -1,0 +1,8 @@
+[
+  { "subject": "Mathematics", "grade": "A+" },
+  { "subject": "Physics", "grade": "A" },
+  { "subject": "C programming", "grade": "B+" },
+  { "subject": "Economics", "grade": "A" },
+  { "subject": "Digital Logic", "grade": "A+" },
+  { "subject": "Computer Hardware", "grade": "A" }
+]
