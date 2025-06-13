@@ -1,4 +1,4 @@
-// Default fallback data
+
 const defaultGrades = [
   { "subject": "Mathematics", "grade": "O" },
   { "subject": "Physics", "grade": "F" },
@@ -26,12 +26,12 @@ function renderGrades() {
   gradesData.forEach((entry, index) => {
     const card = document.createElement("div");
     const grade = entry.grade.trim().toUpperCase();
-    let color = "rgba(255, 62, 62, 0.59)"; // default red
+    let color = "rgba(255, 62, 62, 0.59)";
 
-    if (grade === "O" || grade === "A+" || grade === "A") color = "#8fff8f";       // green
-    else if (grade === "B+" || grade === "B") color = "#fffb91";   // yellow-orange
-    else if (grade === "C" || grade === "D") color = "#ffd0a1";    // orange
-    else if (grade === "F") color = "#ff8b8b";                     // red
+    if (grade === "O" || grade === "A+" || grade === "A") color = "#8fff8f";     
+    else if (grade === "B+" || grade === "B") color = "#fffb91";  
+    else if (grade === "C" || grade === "D") color = "#ffd0a1";  
+    else if (grade === "F") color = "#ff8b8b";                    
 
     card.style.backgroundColor = color;
     if (["C", "D", "F"].includes(grade)) {
@@ -76,7 +76,6 @@ function renderGrades() {
       }
     });
 
-    // Edit Grade Button
     const editGradeBtn = document.createElement("button");
     editGradeBtn.className = "edit-grade-btn";
     editGradeBtn.textContent = "Edit Grade";
@@ -89,7 +88,6 @@ function renderGrades() {
       }
     });
 
-    // Delete Button
     const deleteBtn = document.createElement("button");
     deleteBtn.className = "delete-btn";
     deleteBtn.textContent = "Delete";
@@ -158,22 +156,13 @@ document.getElementById("addBtn").addEventListener("click", () => {
     renderGrades();
   }
 });
-// Reset grades
 document.getElementById("resetBtn").addEventListener("click", () => {
   const confirmReset = confirm("This will delete all subjects. Continue?");
   if (confirmReset) {
-    gradesData = []; // just empty the array
-    saveGrades(gradesData); // store the empty list
-    renderGrades(); // refresh the view
-  }
-});
-document.getElementById("restoreDefaultsBtn").addEventListener("click", () => {
-  if (confirm("Restore default subjects? This will replace your current list.")) {
-    gradesData = defaultGrades.map(e => ({ ...e })); // clone default
-    saveGrades(gradesData);
+    gradesData = [];
+    saveGrades(gradesData); 
     renderGrades();
   }
 });
-
 
 window.addEventListener("DOMContentLoaded", renderGrades);
