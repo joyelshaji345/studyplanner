@@ -125,7 +125,7 @@ function updateCGPA() {
     "B","b": 6,
     "C","c": 5,
     "D","d": 4,
-    "F","f": 0,
+    "F","f": 0
   };
 
   let totalPoints = 0;
