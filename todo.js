@@ -1,9 +1,7 @@
-// Load tasks from localStorage
+
 function loadTasks() {
   const saved = localStorage.getItem("todo-tasks");
   if (saved) return JSON.parse(saved);
-
-  // Default tasks (first time only)
   const defaultTasks = [
     { text: "Finish homework", done: true },
     { text: "Practice keyboard", done: false },
@@ -12,13 +10,9 @@ function loadTasks() {
   saveTasks(defaultTasks);
   return defaultTasks;
 }
-
-// Save tasks to localStorage
 function saveTasks(tasks) {
   localStorage.setItem("todo-tasks", JSON.stringify(tasks));
 }
-
-// Render tasks into the list
 function renderTasks() {
   const taskList = document.getElementById("taskList");
   const tasks = loadTasks();
@@ -55,8 +49,6 @@ function renderTasks() {
     taskList.appendChild(li);
   });
 }
-
-// Add task on button click
 document.getElementById("addTaskBtn").addEventListener("click", () => {
   const input = document.getElementById("taskInput");
   const text = input.value.trim();
@@ -73,6 +65,4 @@ document.getElementById("clearCompletedBtn").addEventListener("click", () => {
   renderTasks();
 });
 });
-
-// Initial render
 window.addEventListener("DOMContentLoaded", renderTasks);
