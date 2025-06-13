@@ -245,3 +245,7 @@ function initializeTodoPage() {
 }
 
 window.initializeTodoPage = initializeTodoPage;
+document.addEventListener("DOMContentLoaded", () => {
+  initializeTodoPage();
+});
+
