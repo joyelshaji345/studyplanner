@@ -1,6 +1,4 @@
-/* --- Styles specific to index.html --- */
 
-/* Header Section */
 .header {
   position: relative;
   text-align: center;
@@ -27,7 +25,6 @@
   object-fit: cover;
 }
 
-/* Quote Bar Section */
 .quote-bar-section {
   display: flex;
   flex-direction: column;
@@ -61,7 +58,6 @@
   background-color: #2fd3c4;
 }
 
-/* Task Section (Homepage) */
 .task-section {
   margin-top: 40px;
   width: 60%;
@@ -93,15 +89,14 @@
   padding: 2px 6px;
 }
 .complete-btn {
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50; 
   margin-left: 10px;
 }
 .delete-btn {
-  background-color: #f44336; /* Red */
+  background-color: #f44336; 
   margin-left: 5px;
 }
 
-/* Timer Section (Homepage) */
 .timer-section {
   float: right;
   width: 35%;
@@ -120,7 +115,7 @@
   margin: 0 auto 20px auto;
 }
 
-#home-time { /* Specific ID for homepage timer */
+#home-time { 
   font-size: 50px;
   font-weight: bold;
 }
@@ -147,7 +142,7 @@
 .pause { background-color: #00ff68; }
 .reset { background-color: #42ffe6; }
 
-/* --- Dark Mode Specifics for index.html --- */
+
 body.dark .quote-bar-section {
-  color: #000; /* Keep text black for the light-colored quote bar */
+  color: #000; 
 }
