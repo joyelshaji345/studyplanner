@@ -146,3 +146,6 @@
 body.dark .quote-bar-section {
   color: #000; 
 }
+body.dark #home-time {
+  color: #000;
+}
