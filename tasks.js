@@ -1,8 +1,3 @@
-// tasks.js - The new unified task management system
-
-// --- DATA MANAGEMENT ---
-
-// Provides a default set of tasks for the first time a user opens the app.
 function getDefaultTasks() {
   return [
     { id: Date.now() + 1, text: "Complete physics lab record", done: false, isToday: true, deadline: '' },
@@ -16,27 +11,23 @@ function getDefaultTasks() {
   ];
 }
 
-// Loads tasks from localStorage or provides defaults. This is the single source of truth.
 function loadTasks() {
-  const tasksJSON = localStorage.getItem('todo-tasks-unified'); // Using a new key to avoid conflicts
+  const tasksJSON = localStorage.getItem('todo-tasks-unified');
   return tasksJSON ? JSON.parse(tasksJSON) : getDefaultTasks();
 }
 
-// Saves the entire task list to localStorage.
 function saveTasks(tasks) {
   localStorage.setItem('todo-tasks-unified', JSON.stringify(tasks));
 }
 
 
-// --- CORE TASK ACTIONS (can be called from any page) ---
-
 function addTask(text) {
   const tasks = loadTasks();
   const newTask = {
-    id: Date.now(), // Unique ID based on timestamp
+    id: Date.now(), 
     text: text,
     done: false,
-    isToday: false, // New tasks don't appear on homepage by default
+    isToday: false, 
     deadline: ''
   };
   tasks.push(newTask);
@@ -77,9 +68,6 @@ function setDeadline(taskId, deadline) {
 }
 
 
-// --- RENDERING LOGIC (for displaying tasks on the pages) ---
-
-// Renders the "What to do today?" list on the homepage.
 function renderHomeTasks() {
   const homeTaskList = document.getElementById('home-task-list');
   if (!homeTaskList) return;
@@ -129,8 +117,6 @@ function renderHomeTasks() {
   });
 }
 
-
-// Renders the full master list on the To-Do page.
 function renderMasterTasks() {
   const masterTaskList = document.getElementById('master-task-list');
   if (!masterTaskList) return;
@@ -145,7 +131,7 @@ function renderMasterTasks() {
   
   tasks.forEach(task => {
     const li = document.createElement('li');
-    li.className = 'task-item'; // Use a different class to avoid style conflicts
+    li.className = 'task-item'; 
     if(task.isToday) li.classList.add('is-today');
     if(task.done) li.classList.add('is-done');
 
@@ -163,7 +149,6 @@ function renderMasterTasks() {
       </div>
     `;
 
-    // Add event listeners
     li.querySelector('.task-checkbox').addEventListener('change', () => {
       toggleTaskDone(task.id);
       renderMasterTasks();
@@ -186,17 +171,12 @@ function renderMasterTasks() {
 }
 
 
-// --- PAGE INITIALIZATION ---
-
-// Sets up the event listeners for the To-Do page.
-// --- PAGE INITIALIZATION ---
-
 function initializeTodoPage() {
   const addTaskForm = document.getElementById('addTaskForm');
   const taskInput = document.getElementById('taskInput');
   const clearCompletedBtn = document.getElementById('clearCompletedBtn');
 
-  console.log("initializeTodoPage is executing..."); // DEBUG
+  console.log("initializeTodoPage is executing...");
 
   if (addTaskForm) {
     addTaskForm.addEventListener('submit', (e) => {
@@ -222,5 +202,4 @@ function initializeTodoPage() {
   renderMasterTasks();
 }
 
-// 🔧 EXPOSE THE FUNCTION
 window.initializeTodoPage = initializeTodoPage;
