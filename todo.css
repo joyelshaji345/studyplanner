@@ -1,4 +1,3 @@
-/* todo.css (Updated for new features, keeping original theme) */
 
 .main {
   display: flex;
@@ -42,7 +41,6 @@
 }
 #addTaskBtn:hover { transform: translateY(-2px); }
 
-/* Master task list container */
 #master-task-list {
   list-style: none;
   padding: 0;
@@ -52,7 +50,6 @@
   gap: 12px;
 }
 
-/* Individual task item styling */
 .task-item {
   display: flex;
   align-items: center;
@@ -65,7 +62,6 @@
   border-left: 4px solid transparent;
 }
 
-/* Main part of the task (checkbox and text) */
 .task-item .task-main {
   flex-grow: 1;
   display: flex;
@@ -80,7 +76,6 @@
   font-size: 1.1rem;
 }
 
-/* Deadline display and input */
 .task-item .task-details {
   font-size: 0.9em;
   color: #555;
@@ -95,7 +90,6 @@
     padding: 2px;
 }
 
-/* Action buttons (star, delete) */
 .task-item .task-actions {
   margin-left: auto; 
   display: flex;
@@ -118,7 +112,6 @@
   color: #ff7c7c;
 }
 
-/* Special states for tasks */
 .task-item.is-today {
   border-left-color: #ffd000;
 }
@@ -155,8 +148,6 @@
 }
 #clearCompletedBtn:hover { transform: translateY(-2px); }
 
-
-/* --- Dark Mode Overrides for To-Do Page --- */
 body.dark .task-item,
 body.dark .task-empty {
   background-color: #2a2a2a;
