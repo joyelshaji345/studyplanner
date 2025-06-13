@@ -120,7 +120,7 @@ function renderHomeTasks() {
 function renderMasterTasks() {
   const masterTaskList = document.getElementById('master-task-list');
   if (!masterTaskList) return;
-  
+
   const tasks = loadTasks();
   masterTaskList.innerHTML = '';
 
@@ -128,48 +128,83 @@ function renderMasterTasks() {
     masterTaskList.innerHTML = `<li class="task-item task-empty">No tasks yet. Add one above to get started!</li>`;
     return;
   }
-  
+
   tasks.forEach(task => {
     const li = document.createElement('li');
-    li.className = 'task-item'; 
-    if(task.isToday) li.classList.add('is-today');
-    if(task.done) li.classList.add('is-done');
+    li.className = 'task-item';
+    if (task.isToday) li.classList.add('is-today');
+    if (task.done) li.classList.add('is-done');
 
-    li.innerHTML = `
-      <div class="task-main">
-        <input type="checkbox" class="task-checkbox" ${task.done ? 'checked' : ''}>
-        <span class="task-text">${task.text}</span>
-      </div>
-      <div class="task-details">
-        <label>Deadline: <input type="date" class="deadline-input" value="${task.deadline}"></label>
-      </div>
-      <div class="task-actions">
-        <button class="today-btn" title="Mark for Today">${task.isToday ? '★' : '☆'}</button>
-        <button class="delete-btn" title="Delete Task">✖</button>
-      </div>
-    `;
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.className = "task-checkbox";
+    checkbox.checked = task.done;
 
-    li.querySelector('.task-checkbox').addEventListener('change', () => {
+    const span = document.createElement("span");
+    span.className = "task-text";
+    span.textContent = task.text;
+
+    const dateInput = document.createElement("input");
+    dateInput.type = "date";
+    dateInput.className = "deadline-input";
+    dateInput.value = task.deadline;
+
+    const todayBtn = document.createElement("button");
+    todayBtn.className = "today-btn";
+    todayBtn.textContent = task.isToday ? '★' : '☆';
+    todayBtn.title = "Mark for Today";
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.className = "delete-btn";
+    deleteBtn.textContent = "✖";
+    deleteBtn.title = "Delete Task";
+
+    // Structure the task item
+    const mainDiv = document.createElement("div");
+    mainDiv.className = "task-main";
+    mainDiv.appendChild(checkbox);
+    mainDiv.appendChild(span);
+
+    const detailsDiv = document.createElement("div");
+    detailsDiv.className = "task-details";
+    const label = document.createElement("label");
+    label.textContent = "Deadline: ";
+    label.appendChild(dateInput);
+    detailsDiv.appendChild(label);
+
+    const actionsDiv = document.createElement("div");
+    actionsDiv.className = "task-actions";
+    actionsDiv.appendChild(todayBtn);
+    actionsDiv.appendChild(deleteBtn);
+
+    li.appendChild(mainDiv);
+    li.appendChild(detailsDiv);
+    li.appendChild(actionsDiv);
+
+    // ✅ Attach event listeners
+    checkbox.addEventListener("change", () => {
       toggleTaskDone(task.id);
       renderMasterTasks();
     });
-    li.querySelector('.today-btn').addEventListener('click', () => {
+
+    todayBtn.addEventListener("click", () => {
       toggleIsToday(task.id);
       renderMasterTasks();
     });
-    li.querySelector('.delete-btn').addEventListener('click', () => {
+
+    deleteBtn.addEventListener("click", () => {
       deleteTask(task.id);
       renderMasterTasks();
     });
-    li.querySelector('.deadline-input').addEventListener('change', (e) => {
-        setDeadline(task.id, e.target.value);
-        renderMasterTasks();
+
+    dateInput.addEventListener("change", (e) => {
+      setDeadline(task.id, e.target.value);
+      renderMasterTasks();
     });
 
     masterTaskList.appendChild(li);
   });
 }
-
 
 function initializeTodoPage() {
   const addTaskForm = document.getElementById('addTaskForm');
