@@ -8,10 +8,11 @@ function getDefaultTasks() {
     { id: Date.now() + 1, text: "Complete physics lab record", done: false, isToday: true, deadline: '' },
     { id: Date.now() + 2, text: "Practice maths QB", done: false, isToday: true, deadline: '2025-06-20' },
     { id: Date.now() + 3, text: "Work on Web project", done: false, isToday: true, deadline: '' },
-    { id: Date.now() + 4, text: "Digital logic homework", done: false, isToday: false, deadline: '' },
-    { id: Date.now() + 5, text: "Complete C note", done: false, isToday: false, deadline: '' },
-    { id: Date.now() + 6, text: "Read Chapter 4 of CS book", done: true, isToday: false, deadline: '' },
-    { id: Date.now() + 7, text: "Prepare for seminar", done: false, isToday: false, deadline: '2025-06-30' }
+    { id: Date.now() + 4, text: "Check new interships", done: false, isToday: true, deadline: '' },
+    { id: Date.now() + 5, text: "Digital logic homework", done: false, isToday: false, deadline: '' },
+    { id: Date.now() + 6, text: "Complete C note", done: false, isToday: false, deadline: '' },
+    { id: Date.now() + 7, text: "Study for lab exam", done: true, isToday: true, deadline: '' },
+    { id: Date.now() + 8, text: "Prepare for seminar", done: false, isToday: false, deadline: '2025-06-30' }
   ];
 }
 
