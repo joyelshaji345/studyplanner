@@ -1,8 +1,6 @@
-/* grades.css (Redesigned) */
 
 .main > h1, .main > h2 { text-align: center; }
 
-/* Form Styles */
 .grades-form {
   display: flex;
   flex-wrap: wrap;
@@ -37,7 +35,6 @@
 #resetBtn { background-color: #ff7c7c; color: white; }
 #restoreDefaultsBtn { background-color: #4ecbff; color: black; }
 
-/* Grades Grid */
 .grades-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -59,13 +56,12 @@
 .grade-subject { font-weight: bold; font-size: 1.4rem; }
 .grade-value { font-size: 1.1rem; margin-top: 5px; }
 
-/* Grade Actions */
 .grade-actions {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: auto; /* Push actions to the bottom */
+  margin-top: auto; 
 }
 .grade-actions button {
   padding: 6px 12px;
@@ -79,10 +75,8 @@
 .edit-grade-btn { background-color: #ffd000; }
 .delete-btn { background-color: #333; color: white; }
 
-/* Warning Text for Grades */
 .warning-text, .slight-text { font-size: 0.9rem; margin-top: 8px; font-weight: bold; }
 .warning-text { color: #d90429; }
 .slight-text { color: #e85d04; }
 
-/* Dark Mode Overrides */
 body.dark .grades-form { background-color: #2a2a2a; }
