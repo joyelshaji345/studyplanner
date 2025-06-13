@@ -117,16 +117,25 @@ function updateCGPA() {
     return;
   }
 
-  const gradeToPoint = {
-    "O","o": 10,
-    "A+","a+": 9,
-    "A","a": 8,
-    "B+","b+": 7,
-    "B","b": 6,
-    "C","c": 5,
-    "D","d": 4,
-    "F","f": 0
-  };
+const gradeToPoint = {
+  "O": 10,
+  "o": 10,
+  "A+": 9,
+  "a+": 9,
+  "A": 8,
+  "a": 8,
+  "B+": 7,
+  "b+": 7,
+  "B": 6,
+  "b": 6,
+  "C": 5,
+  "c": 5,
+  "D": 4,
+  "d": 4,
+  "F": 0,
+  "f": 0
+};
+
 
   let totalPoints = 0;
   let count = 0;
