@@ -13,8 +13,15 @@ function getDefaultTasks() {
 
 function loadTasks() {
   const tasksJSON = localStorage.getItem('todo-tasks-unified');
-  return tasksJSON ? JSON.parse(tasksJSON) : getDefaultTasks();
+  if (tasksJSON) {
+    return JSON.parse(tasksJSON);
+  } else {
+    const defaults = getDefaultTasks();
+    saveTasks(defaults);
+    return defaults;
+  }
 }
+
 
 function saveTasks(tasks) {
   localStorage.setItem('todo-tasks-unified', JSON.stringify(tasks));
