@@ -165,3 +165,52 @@ body.dark {
     visibility: hidden;
   }
 }
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+    overflow-x: auto;
+  }
+
+  .main {
+    padding: 20px;
+  }
+
+  .sidebar-toggle {
+    display: block;
+    margin: 10px;
+    cursor: pointer;
+  }
+
+  .sidebar a.nav-btn {
+    flex: 1;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .grades-form input,
+  .grades-form button {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .todo-container {
+    padding: 0 10px;
+  }
+
+  .grade-card {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .calendar {
+    overflow-x: auto;
+  }
+}
+
