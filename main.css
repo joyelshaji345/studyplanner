@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
-/* --- 1. GLOBAL & BASE STYLES --- */
 * {
   margin: 0;
   padding: 0;
@@ -26,7 +25,6 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* --- 2. LAYOUT --- */
 .container {
   display: flex;
   position: relative;
@@ -46,7 +44,6 @@ h2 {
 }
 
 
-/* --- 3. COLLAPSIBLE SIDEBAR --- */
 .sidebar {
   width: 250px;
   height: 100%;
@@ -54,7 +51,7 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  background-color: #75c5dceb; /* Light theme default */
+  background-color: #75c5dceb; 
   position: fixed;
   top: 0;
   left: 0;
@@ -63,17 +60,14 @@ h2 {
   transition: transform 0.3s ease-in-out, background-color 0.3s ease;
 }
 
-/* Sidebar active (slide in) */
 .sidebar.active {
   transform: translateX(0);
 }
 
-/* Sidebar in dark mode */
 body.dark .sidebar {
   background-color: #1e1e1e;
 }
 
-/* --- 4. NAV BUTTONS --- */
 .nav-btn {
   background-color: #ffffff;
   color: rgb(0, 0, 0);
@@ -95,7 +89,6 @@ body.dark .sidebar {
   color: #000;
 }
 
-/* Dark mode nav button style */
 body.dark .nav-btn {
   background-color: #2e2e2e;
   color: white;
@@ -107,7 +100,6 @@ body.dark .nav-btn.active {
   color: #000;
 }
 
-/* --- 5. SIDEBAR TOGGLE BUTTON (Hamburger) --- */
 .sidebar-toggle {
   position: fixed;
   top: 30px;
@@ -134,7 +126,6 @@ body.dark .sidebar-toggle {
   transition: all 0.3s ease-in-out;
 }
 
-/* Hamburger → "X" animation when sidebar is active */
 .sidebar.active ~ .main .sidebar-toggle span:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
 }
@@ -147,7 +138,6 @@ body.dark .sidebar-toggle {
   transform: translateY(-9px) rotate(-45deg);
 }
 
-/* --- 6. DARK MODE BODY --- */
 body.dark {
   background-color: #121212;
   color: white;
