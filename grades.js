@@ -1,5 +1,5 @@
 const defaultGrades = [
-  { "subject": "Mathematics", "grade": "O" },
+  { "subject": "Mathematics", "grade": "S" },
   { "subject": "Physics", "grade": "F" },
   { "subject": "C programming", "grade": "A+" },
   { "subject": "Economics", "grade": "C" },
@@ -27,10 +27,10 @@ function renderGrades() {
     const grade = entry.grade.trim().toUpperCase();
     let color = "rgba(255, 62, 62, 0.59)";
 
-    if (grade === "O" || grade === "A+" || grade === "A") color = "#8fff8f";     
-    else if (grade === "B+" || grade === "B") color = "#fffb91";  
-    else if (grade === "C" || grade === "D") color = "#ffd0a1";  
-    else if (grade === "F") color = "#ff8b8b";                    
+    if (grade === "S" || grade === "A+" || grade === "A" || grade === "s" || grade === "a+" || grade === "a") color = "#8fff8f";     
+    else if (grade === "B+" || grade === "B" || grade === "b+" || grade === "b") color = "#fffb91";  
+    else if (grade === "C" || grade === "D" || grade === "c" || grade === "d") color = "#ffd0a1";  
+    else if (grade === "F" || grade === "f") color = "#ff8b8b";                    
 
     card.style.backgroundColor = color;
     if (["C", "D", "F"].includes(grade)) {
@@ -125,7 +125,15 @@ function updateCGPA() {
     "B": 6,
     "C": 5,
     "D": 4,
-    "F": 0
+    "F": 0,
+    "o": 10,
+    "a+": 9,
+    "a": 8,
+    "b+": 7,
+    "b": 6,
+    "c": 5,
+    "d": 4,
+    "f": 0
   };
 
   let totalPoints = 0;
