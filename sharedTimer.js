@@ -40,15 +40,13 @@ function initTimer(displayElementId) {
   }
 
   function syncAndStart() {
-    tick(); // First update immediately
+    tick(); 
     clearInterval(interval);
     interval = setInterval(tick, 1000);
   }
 
-  // Init
   syncAndStart();
 
-  // Attach buttons if they exist
   const startBtn = document.getElementById("start");
   const pauseBtn = document.getElementById("pause");
   const resetBtn = document.getElementById("reset");
@@ -66,7 +64,7 @@ function initTimer(displayElementId) {
   if (pauseBtn) {
     pauseBtn.addEventListener("click", () => {
       const state = getState();
-      tick(); // update before pausing
+      tick(); 
       state.isRunning = false;
       saveState(state);
       clearInterval(interval);
