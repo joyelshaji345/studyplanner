@@ -41,17 +41,5 @@
 
   <script src="app.js" defer></script>
   <script src="tasks.js" defer></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      console.log("DOMContentLoaded triggered");
-      if (typeof initializeTodoPage === 'function') {
-        console.log("initializeTodoPage found, calling it");
-        initializeTodoPage();
-      } else {
-        console.warn("initializeTodoPage is NOT defined!");
-      }
-    });
-  </script>
-
 </body>
 </html>
