@@ -1,11 +1,10 @@
-/* --- Styles specific to settings.html --- */
 
 .main {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
-  padding: 60px; /* Override default padding */
+  padding: 60px; 
 }
 
 .setting-option {
@@ -41,7 +40,6 @@
   color: #333;
 }
 
-/* --- Dark Mode Specifics for settings.html --- */
 body.dark .setting-option {
   background-color: rgba(255, 255, 255, 0.08);
   color: white;
